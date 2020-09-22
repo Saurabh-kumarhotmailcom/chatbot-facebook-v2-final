@@ -476,7 +476,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 } else if (phone_number != '' && user_name != '' && previous_job != '' && years_of_experience != ''
                     && job_vacancy != '') {
 
-                    jobApplicationService(phone_number, user_name, previous_job, years_of_experience, job_vacancy);
+                    jobApplicationService(sender, phone_number, user_name, previous_job, years_of_experience, job_vacancy);
 
                     fbService.handleMessages(messages, sender);
 

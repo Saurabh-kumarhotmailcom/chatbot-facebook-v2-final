@@ -6,7 +6,7 @@ const pg = require('pg');
 pg.defaults.ssl = true;
 
 
-module.exports = function(phone_number, user_name, previous_job, years_of_experience, job_vacancy){
+module.exports = function(userId, phone_number, user_name, previous_job, years_of_experience, job_vacancy){
     console.log('sending email');
     let emailContent = 'A new job inquiry from ' + user_name + ' for the job: ' + job_vacancy +
         '.<br> Previous job position: ' + previous_job + '.' +
@@ -23,9 +23,9 @@ module.exports = function(phone_number, user_name, previous_job, years_of_experi
         client
             .query(
                 'INSERT into job_data ' +
-                '(phone_number, user_name, previous_job, years_of_experience, job_vacancy) ' +
-                'VALUES($1, $2, $3, $4, $5) RETURNING id',
-                [phone_number, user_name, previous_job, years_of_experience, job_vacancy],
+                '(fb_Id,phone_number, user_name, previous_job, years_of_experience, job_vacancy) ' +
+                'VALUES($1, $2, $3, $4, $5, $6) RETURNING id',
+                [userId, phone_number, user_name, previous_job, years_of_experience, job_vacancy],
                 function(err, result) {
                     if (err) {
                         console.log(err);
