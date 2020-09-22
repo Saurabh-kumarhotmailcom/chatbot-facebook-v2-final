@@ -13,7 +13,7 @@ module.exports = function(userId, phone_number, user_name, previous_job, years_o
         '.<br> Years of experience: ' + years_of_experience + '.' +
         '.<br> Phone number: ' + phone_number + '.';
 
-    emailService.sendEmail('New job application', emailContent);
+    //emailService.sendEmail('New job application', emailContent);
 
     var pool = new pg.Pool(config.PG_CONFIG);
     pool.connect(function(err, client, done) {

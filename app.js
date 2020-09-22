@@ -454,7 +454,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 let job_vacancy = (fbService.isDefined(contexts[0].parameters.fields['job-entities'])
                     && contexts[0].parameters.fields['job-entities'] != '') ? contexts[0].parameters.fields['job-entities'].stringValue : '';
 
-                    console.log("Line 457"+"phone_number:"+phone_number, "user_name"+ user_name+"previous_job"+previous_job+"years_of_experience"+ years_of_experience);
+                    console.log("Line 457"+"phone_number:"+phone_number, "user_name"+ user_name+"previous_job"+previous_job+"years_of_experience"+ years_of_experience + "job_vacancy "+ job_vacancy);
                 if (phone_number == '' && user_name != '' && previous_job != '' && years_of_experience == '') {
 
                     let replies = [
