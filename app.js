@@ -156,7 +156,7 @@ const usersMap = new Map();
 
 // Index route
 app.get('/', function (req, res) {
-	res.send('Hello world, I am a chat bot')
+	res.send('Hello world, I am a chat bot new code')
 })
 
 app.use('/broadcast', broadcast);
