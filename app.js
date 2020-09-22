@@ -362,7 +362,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 }
             }, 0, sender);
             break;
-        case "buy.iphone":
+        case "buy-iphone":
             colors.readUserColor(function(color) {
                     let reply;
                     if (color === '') {
@@ -375,7 +375,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 }, sender
             )
             break;
-        case "iphone_colors.fovourite":
+        case "iphone_colors.favourite":
             colors.updateUserColor(parameters.fields['color'].stringValue, sender);
             let reply = `Oh, I like it, too. I'll remember that.`;
             fbService.sendTextMessage(sender, reply);
@@ -432,9 +432,9 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
 
                 fbService.sendButtonMessage(sender, "What would you like to do next?", buttons);
             }, 3000)
-
             break;
-        case "detailed-application":
+
+        case "Detailed-application":
             let filteredContexts = contexts.filter(function (el) {
                 return el.name.includes('job_application') ||
                     el.name.includes('job-application-details_dialog_context')
