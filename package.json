@@ -13,16 +13,19 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@sendgrid/mail": "^6.4.0",
+    "@sendgrid/mail": "^7.2.4",
     "body-parser": "^1.18.3",
-    "dialogflow": "^0.5.0",
-    "ejs": "^2.6.1",
-    "express": "^4.16.3",
-    "express-session": "^1.15.6",
-    "passport": "^0.4.0",
-    "passport-facebook": "^2.1.1",
+    "dialogflow": "^1.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.16.4",
+    "express-session": "^1.17.1",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
     "pg": "^7.4.3",
-    "request": "^2.87.0",
+    "request": "^2.88.0",
     "uuid": "^3.3.2"
+  },
+  "engines": {
+    "node": "12.18.3"
   }
 }
