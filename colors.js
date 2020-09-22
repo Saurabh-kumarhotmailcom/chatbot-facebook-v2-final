@@ -3,7 +3,7 @@ const request = require('request');
 const config = require('./config');
 const pg = require('pg');
 pg.defaults.ssl = true;
-
+// comment
 module.exports = {
 
     readAllColors: function(callback) {
