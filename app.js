@@ -563,11 +563,11 @@ async function greetUserText(userId) {
     }
 
     if (user) {
-        sendTextMessage(userId, "Welcome " + user.first_name + '! ' +
+       fbService.sendTextMessage(userId, "Welcome " + user.first_name + '! ' +
             'I can answer frequently asked questions for you ' +
             'and I perform job interviews. What can I help you with?');
     } else {
-        sendTextMessage(userId, 'Welcome! ' +
+        fbService.sendTextMessage(userId, 'Welcome! ' +
             'I can answer frequently asked questions for you ' +
             'and I perform job interviews. What can I help you with?');
     }
