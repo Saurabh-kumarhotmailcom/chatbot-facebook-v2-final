@@ -435,12 +435,14 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
             break;
 
         case "Detailed-application":
+            console.log("Line 438");
             let filteredContexts = contexts.filter(function (el) {
                 return el.name.includes('job_application') ||
                     el.name.includes('job-application-details_dialog_context')
             });
+            console.log("Line 443");
             if (filteredContexts.length > 0 && contexts[0].parameters) {
-                let phone_number = (isDefined(contexts[0].parameters.fields['phone-number'])
+                let phone_number = (fbService.isDefined(contexts[0].parameters.fields['phone-number'])
 
                     && contexts[0].parameters.fields['phone-number'] != '') ? contexts[0].parameters.fields['phone-number'].stringValue : '';
                 let user_name = (fbService.isDefined(contexts[0].parameters.fields['user-name'])
@@ -452,7 +454,7 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                 let job_vacancy = (fbService.isDefined(contexts[0].parameters.fields['job-entities'])
                     && contexts[0].parameters.fields['job-entities'] != '') ? contexts[0].parameters.fields['job-entities'].stringValue : '';
 
-
+                    console.log("Line 457"+"phone_number:"+phone_number, "user_name"+ user_name+"previous_job"+previous_job+"years_of_experience"+ years_of_experience);
                 if (phone_number == '' && user_name != '' && previous_job != '' && years_of_experience == '') {
 
                     let replies = [
