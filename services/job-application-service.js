@@ -23,7 +23,7 @@ module.exports = function(userId, phone_number, user_name, previous_job, years_o
         client
             .query(
                 'INSERT into job_data ' +
-                '(fb_Id,phone_number, user_name, previous_job, years_of_experience, job_vacancy) ' +
+                '(fb_Id, phone_number, user_name, previous_job, years_of_experience, job_vacancy) ' +
                 'VALUES($1, $2, $3, $4, $5, $6) RETURNING id',
                 [userId, phone_number, user_name, previous_job, years_of_experience, job_vacancy],
                 function(err, result) {

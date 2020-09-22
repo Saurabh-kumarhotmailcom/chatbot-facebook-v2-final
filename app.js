@@ -449,8 +449,8 @@ function handleDialogFlowAction(sender, action, messages, contexts, parameters) 
                     && contexts[0].parameters.fields['previous-job'] != '') ? contexts[0].parameters.fields['previous-job'].stringValue : '';
                 let years_of_experience = (fbService.isDefined(contexts[0].parameters.fields['years-of-experience'])
                     && contexts[0].parameters.fields['years-of-experience'] != '') ? contexts[0].parameters.fields['years-of-experience'].stringValue : '';
-                let job_vacancy = (fbService.isDefined(contexts[0].parameters.fields['job-vacancy'])
-                    && contexts[0].parameters.fields['job-vacancy'] != '') ? contexts[0].parameters.fields['job-vacancy'].stringValue : '';
+                let job_vacancy = (fbService.isDefined(contexts[0].parameters.fields['job-entities'])
+                    && contexts[0].parameters.fields['job-entities'] != '') ? contexts[0].parameters.fields['job-entities'].stringValue : '';
 
 
                 if (phone_number == '' && user_name != '' && previous_job != '' && years_of_experience == '') {
