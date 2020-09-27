@@ -24,13 +24,13 @@ module.exports = function(userId, phone_number, user_name, previous_job, years_o
             .query(
                 'INSERT into job_data ' +
                 '(fb_Id, phone_number, user_name, previous_job, years_of_experience, job_vacancy) ' +
-                'VALUES($1, $2, $3, $4, $5, $6) RETURNING id',
+                'VALUES($1, $2, $3, $4, $5, $6) RETURNING fb_Id',
                 [userId, phone_number, user_name, previous_job, years_of_experience, job_vacancy],
                 function(err, result) {
                     if (err) {
                         console.log(err);
                     } else {
-                        console.log('row inserted with id: ' + result.rows[0].id);
+                        console.log('row inserted with id: ' + result.rows[0].fb_Id);
                     }
 
                 });
