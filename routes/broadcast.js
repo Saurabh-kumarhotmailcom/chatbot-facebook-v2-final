@@ -60,9 +60,10 @@ router.get('/logout', ensureAuthenticated, function (req, res) {
 });
 
 function ensureAuthenticated(req, res, next) {
+    console.log('req: 63'+ JSON.stringify(req));
     if (req.isAuthenticated()) {
         if (req.user.id === config.ADMIN_ID ) {
-            return next();
+            
         }
         res.redirect('/broadcast/no-access');
     } else {
