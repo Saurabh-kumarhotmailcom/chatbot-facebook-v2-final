@@ -13,6 +13,7 @@
 <main>
     <div class="container">
         <h2>Hello, <%= user.displayName %></h2>
+        <p><%- JSON.stringify(user) %></p>
 
         <form class="form-horizontal" method="post" action="/broadcast/broadcast">
             <div class="form-group">
