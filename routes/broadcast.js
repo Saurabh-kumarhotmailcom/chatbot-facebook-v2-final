@@ -60,15 +60,11 @@ router.get('/logout', ensureAuthenticated, function (req, res) {
 });
 
 function ensureAuthenticated(req, res, next) {
-    console.log('req.isAuthenticated(): LIne 63'+ req.isAuthenticated());
     if (req.isAuthenticated()) {
-
-        console.log('req.user.id: LIne 63'+ req.user.id);
-
         if (req.user.id === config.ADMIN_ID ) {
-            
+            return next();
         }
-        return next();
+        res.redirect('/broadcast/no-access');
     } else {
         res.redirect('/broadcast/');
     }
