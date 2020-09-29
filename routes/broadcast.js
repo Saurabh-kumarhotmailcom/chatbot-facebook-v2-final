@@ -60,7 +60,7 @@ router.get('/logout', ensureAuthenticated, function (req, res) {
 });
 
 function ensureAuthenticated(req, res, next) {
-    console.log('req: 63'+ JSON.stringify(req));
+    console.log('req: 63'+ req);
     if (req.isAuthenticated()) {
         if (req.user.id === config.ADMIN_ID ) {
             
