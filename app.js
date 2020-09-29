@@ -292,6 +292,7 @@ function receivedMessage(event) {
 
 function handleQuickReply(senderID, quickReply, messageId) {
     var quickReplyPayload = quickReply.payload;
+    console.log("quickReplyPayload: 295"+ quickReplyPayload);
     switch (quickReplyPayload) {
         case "LIVE_AGENT":
             fbService.sendPassThread(senderID);
