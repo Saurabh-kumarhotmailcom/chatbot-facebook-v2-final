@@ -571,7 +571,9 @@ module.exports = {
             },
             message: {
                 text: text
-            }
+            },
+            "messaging_type": "MESSAGE_TAG",
+            "tag": "ACCOUNT_UPDATE"
         }
         self.callSendAPI(messageData);
     },
