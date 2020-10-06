@@ -56,7 +56,7 @@
 
     window.extAsyncInit = function() {
         // the Messenger Exstensions JS SDK is done loading
-        MessengerExtensions.getContext('1559972370790187',
+        MessengerExtensions.getContext('776465353117125',
             function success(thread_context){
                 $('#psid').val(thread_context.psid);
                 $.getJSON('/webviews/settings?psid=' + thread_context.psid, function (data) {
